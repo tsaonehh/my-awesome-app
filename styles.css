@@ -25,6 +25,11 @@ li{
  list-style: none;
 }
 
+p{
+    text-align: center;
+    font-size: 12px;
+}
+
 .container{
   max-width: 576px;
   width: 100%;
