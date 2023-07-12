@@ -10,85 +10,72 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+   <link rel="stylesheet" href="styles.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form class="search-form" id="locationForm">
+      <div class="weather-app-wrapper">
+       <div class="weather-app">
+        <form class="mb-3" id="search-form">
           <div class="row">
             <div class="col-9">
               <input
                 type="search"
-                placeholder="Type a city"
+                placeholder="Type a city..."
                 autofocus="on"
                 autocomplete="off"
-                id="locationForm-input"
-                class="form-control shadow-sm"
+                id="city-input"
+                class="form-control"
               />
             </div>
             <div class="col-3">
               <input
                 type="submit"
                 value="Search"
-                class="form-control btn btn-primary shadow-sm"
-                id="searchButton"
+                class="btn btn-primary w-100"
               />
             </div>
-            <button
-              type="submit"
-              class="btn btn-danger"
-              id="currentLocationButton"
-            >
-              Current Location
-            </button>
           </div>
         </form>
+        <div class="overview">
         <h1 id="city">
-          Gaborone, Botswana
         </h1>
+        <h2 id="new-time"> 
+        </h2>
         <ul>
-          <li id="current-date">
-
+          <li><span id="date"></span>
           </li>
-          <li>
-            Mostly sunny
+          <li id="description">
           </li>
         </ul>
+        </div>
         <div class="row">
           <div class="col-6">
-            <div class="clearfix">
+            <div class="clearfix weather-temperature">
               <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="Sunny icon"
-                class="weather-icon float-left"
+                src="" alt="Clear" id="icon" class="float-left"
               />
               <div class="float-left">
-                <span class="temperature" id="temperature">22</span
+                <strong id="temperature"></strong
                 ><span class="units">
-                  <a href="#" id="celcius-link">°C</a> | 
-                  <a href="#" id="fahrenheit-link">°F</a>
-                </span>
+                  <a href="#" id="fahrenheit" class="active">°F</a> 
+                  |<a href="#" id="celsius">°C</a></span
+                  >
+                </div>
               </div>
             </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
           </div>
-          <div class="col-6">
-            <ul>
-              <li>
-                Precipitation: 0%
-              </li>
-              <li>
-                Humidity: 24%
-              </li>
-              <li>
-                Wind: 10 km/h
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+          <div class="weather-forecast" id="forecast"></div>
+     </div>
+    </div>
     </div>
     <script src="java.js"></script>
     <p>
